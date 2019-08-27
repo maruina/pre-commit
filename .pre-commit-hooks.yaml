@@ -1,0 +1,6 @@
+- id: jsonnet-fmt
+  name: Jsonnet fmt
+  description: Reformat all the jsonnet files
+  entry: hooks/jsonnet-fmt.sh
+  language: script
+  types: [file, jsonnet]
