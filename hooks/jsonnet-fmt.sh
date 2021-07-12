@@ -13,9 +13,9 @@ for file in "$@"; do
     # We are using the md5sum to check if the file is changing before and after the formatting
     # because jsonnetfmt doesn't have a different exit code to differentiate.  
 
-    before=$("${md5command} ${file}")
+    before=$(eval "${md5command} ${file}")
     jsonnetfmt -i "${file}"
-    after=$("${md5command} ${file}")
+    after=$(eval "${md5command} ${file}")
 
     if [[ ${after} != "${before}" ]]; then
         echo "Fixing ${file}"
